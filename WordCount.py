@@ -1,8 +1,11 @@
-def word_count(phrase):
-    ret = {}
-    for word in phrase.split():
-        if ret.get(word):
-            ret[word] += 1
+def words(phrase):
+    count_dict = {}
+    for l in phrase.split():
+        if l.isdigit():
+            count_dict.setdefault(int(l),0)
+            count_dict[int(l)] += 1
         else:
-            ret[word] = 1
-    return ret
+            count_dict.setdefault(l,0)
+            count_dict[l] += 1
+
+    return count_dict
